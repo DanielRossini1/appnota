@@ -1,0 +1,32 @@
+page-input {
+    background-color: $azulescuro;
+    
+    .div-logo{
+        width: fit-content;
+        margin: 55px auto 110px;
+    }
+
+    ion-item{
+        margin: 15px 0 15px 0 !important;
+        background-color: #0e1e40 !important;
+
+    
+        ion-input{
+            color: $azulclaro;
+        }
+
+    }
+
+    button {
+        background-color: $azulclaro !important;
+        height: 45px !important;
+        color: #0e1e40 !important;
+        font-weight: 900 !important;
+        font-size: 17px !important;
+    }
+
+    .item-inner{
+        border-bottom: 0 !important;
+        box-shadow: none !important;
+    }
+}

@@ -1,0 +1,12 @@
+<div class="div-logo">
+  <img src="../../assets/imgs/logo.png">
+</div>
+<ion-list inset>
+  <ion-item>
+    <ion-input type="number" [(ngModel)]="form.ra" name="ra" placeholder="RA"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="password" [(ngModel)]="form.senha" name="senha" placeholder="SENHA"></ion-input>
+  </ion-item>
+  <button ion-button (click)="tratarForm()" block>Acessar</button>
+</ion-list>

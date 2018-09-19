@@ -1,0 +1,37 @@
+page-home {
+
+    ion-header{
+
+        ion-navbar{
+
+            .toolbar-background{
+                background-color: $azulescuro !important;
+                
+            }
+
+            button{
+    
+                span{
+    
+                    ion-icon{
+                        color: $azulclaro !important;
+        
+                    }
+                }
+    
+            }
+
+            .toolbar-content{
+
+                ion-title{
+
+                    .toolbar-title{
+                        color: $azulclaro !important;
+
+                    }
+
+                }
+            }
+        }
+    }
+}
