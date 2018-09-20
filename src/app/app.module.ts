@@ -8,12 +8,16 @@ import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 import { InputPage } from '../pages/input/input';
 import { HomePage } from '../pages/home/home';
+import { NotaPage } from '../pages/nota/nota';
+import { FrequenciaPage } from '../pages/frequencia/frequencia';
 
 @NgModule({
   declarations: [
     MyApp,
     InputPage,
-    HomePage
+    HomePage,
+    NotaPage,
+    FrequenciaPage
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,9 @@ import { HomePage } from '../pages/home/home';
   entryComponents: [
     MyApp,
     InputPage,
-    HomePage
+    HomePage,
+    NotaPage,
+    FrequenciaPage
   ],
   providers: [
     StatusBar,

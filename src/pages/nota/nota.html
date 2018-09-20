@@ -1,0 +1,56 @@
+<!--
+  Generated template for the NotaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  
+  <ion-navbar>
+
+    <ion-title></ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item *ngFor="let nota of notas.Notas">
+
+    <h2>{{ nota.Disciplina }}</h2>
+
+    <ion-grid>
+
+      <ion-row>
+
+        <ion-col class="back-color">Bim1</ion-col>
+        <ion-col class="back-color">Bim2</ion-col>
+        <ion-col class="back-color">S1B1</ion-col>
+        <ion-col class="back-color">S1B2</ion-col>
+        <ion-col class="back-color">Bim3</ion-col>
+        <ion-col class="back-color">Bim4</ion-col>
+        <ion-col class="back-color">S2B3</ion-col>
+        <ion-col class="back-color">S2B4</ion-col>
+
+      </ion-row>
+
+      <ion-row>
+
+        <ion-col [ngClass]="{'back-red': nota.Bim1 < 6, 'back-blue': nota.Bim1 >= 6 }">{{ nota.Bim1 }}</ion-col>
+        <ion-col [ngClass]="{'back-red': nota.Bim2 < 6, 'back-blue': nota.Bim2 >= 6 }">{{ nota.Bim2 }}</ion-col>
+        <ion-col [ngClass]="{'back-red': nota.S1B1 < 6, 'back-blue': nota.S1B1 >= 6 }">{{ nota.S1B1 }}</ion-col>
+        <ion-col [ngClass]="{'back-red': nota.S1B2 < 6, 'back-blue': nota.S1B2 >= 6 }">{{ nota.S1B2 }}</ion-col>
+        <ion-col [ngClass]="{'back-red': nota.Bim3 < 6, 'back-blue': nota.Bim3 >= 6 }">{{ nota.Bim3 }}</ion-col>
+        <ion-col [ngClass]="{'back-red': nota.Bim4 < 6, 'back-blue': nota.Bim4 >= 6 }">{{ nota.Bim4 }}</ion-col>
+        <ion-col [ngClass]="{'back-red': nota.S2B3 < 6, 'back-blue': nota.S2B3 >= 6 }">{{ nota.S2B3 }}</ion-col>
+        <ion-col [ngClass]="{'back-red': nota.S2B4 < 6, 'back-blue': nota.S2B4 >= 6 }">{{ nota.S2B4 }}</ion-col>
+
+      </ion-row>
+
+    </ion-grid>
+
+  </ion-item>
+
+</ion-content>

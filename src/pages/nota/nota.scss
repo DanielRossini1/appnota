@@ -1,0 +1,36 @@
+page-nota {
+    .back-red{
+        background-color: #ff000069;
+    }
+
+    .back-blue{
+        background-color: #0000ff4d;
+    }
+
+    ion-content{
+        
+        h2{
+            text-align: center;
+            border-bottom: 1px solid $azulescuro;
+            font-size: 17px !important;
+            font-weight: 900;
+
+        }
+
+        ion-grid{
+
+            ion-col{
+                border: 1px solid $azulescuro;
+                font-size: 13px;
+                font-weight: 900;
+                text-align: center;
+                
+            }
+
+            .back-color{
+                background-color: #ffff0059;
+
+            }
+        }
+    }
+}

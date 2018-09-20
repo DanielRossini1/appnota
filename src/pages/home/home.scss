@@ -24,6 +24,7 @@ page-home {
             .toolbar-content{
 
                 ion-title{
+                    text-align: center;
 
                     .toolbar-title{
                         color: $azulclaro !important;
@@ -33,5 +34,29 @@ page-home {
                 }
             }
         }
+    }
+
+
+    ion-tabs{
+        .tabbar{
+            background-color: $azulescuro !important;
+
+            .tab-button[aria-selected=true] {
+                color: $azulclaro;
+                border-bottom: 1px solid $azulclaro;
+            }
+
+            .tab-button{
+                color: rgba(255, 255, 255, 0.281);
+
+                .tab-button-text{
+                    font-size: 15px;
+
+                }
+
+            }
+
+        }
+
     }
 }

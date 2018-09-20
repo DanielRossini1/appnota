@@ -10,9 +10,14 @@
     <button ion-button icon-only menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>{{title}}</ion-title>
   </ion-navbar>
 </ion-header>
+
+<ion-tabs>
+  <ion-tab (ionSelect)="abaSelected('NOTAS')" tabTitle="Notas" [root]="nota"></ion-tab>
+  <ion-tab (ionSelect)="abaSelected('FALTAS')" tabTitle="Faltas" [root]="frequencia"></ion-tab>
+</ion-tabs>
 
 
 <!-- <ion-content padding>
