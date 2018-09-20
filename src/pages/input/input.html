@@ -8,5 +8,5 @@
   <ion-item>
     <ion-input type="password" [(ngModel)]="form.senha" name="senha" placeholder="SENHA"></ion-input>
   </ion-item>
-  <button ion-button (click)="tratarForm()" block>Acessar</button>
+  <button ion-button (click)="tratarForm()" disabled="{{buttonDisabled}}" block>Acessar</button>
 </ion-list>
