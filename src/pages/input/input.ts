@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { Http } from '@angular/http';
+import { HTTP } from '@ionic-native/http';
 
 import { HomePage } from '../home/home';
 
@@ -18,7 +18,7 @@ import { HomePage } from '../home/home';
 })
 export class InputPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HTTP, private alertCtrl: AlertController) {
 
   }
 
@@ -35,21 +35,21 @@ export class InputPage {
   }
   
   tratarForm(){
-    try{
-      this.http.post('https://apinota.herokuapp.com/api', { ra: this.form['ra'], senha: this.form['senha']} )
-        .subscribe((res: any) => { 
-          if(res['_body']=='ERROR'){
-            this.createAlert();
-          }else{
-            this.navCtrl.push(HomePage);
-            window.localStorage.setItem('notas', res['_body']);
-          };
-        }, () => { 
-          this.createAlert();
-        }); 
-    }catch(err){
-      console.log(err);
+      this.http.post('https://apinota.herokuapp.com/api', { ra: this.form['ra'], senha: this.form['senha']}, {})
+        .then(function(res){
+          console.log(res);
+        }).catch(function(err){
+          
+        });
+      }
+      
     }
-  }
-
-}
+    
+    
+    
+    // if(res=='ERROR'){
+    //   this.createAlert();
+    // }else{
+    //   this.navCtrl.pop(HomePage);
+    //   window.localStorage.setItem('notas', res);
+    // };
