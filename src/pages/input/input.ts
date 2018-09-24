@@ -24,7 +24,6 @@ export class InputPage {
 
   form = {}
 
-  buttonDisabled;
 
   createAlert(){
     let alert = this.alertCtrl.create({
@@ -36,19 +35,21 @@ export class InputPage {
   }
   
   tratarForm(){
-    this.buttonDisabled = true;
-    this.http.post('https://apinota.herokuapp.com/api', { ra: this.form['ra'], senha: this.form['senha']} )
-      .subscribe((res: any) => { 
-        if(res['_body']=='ERROR'){
+    try{
+      this.http.post('https://apinota.herokuapp.com/api', { ra: this.form['ra'], senha: this.form['senha']} )
+        .subscribe((res: any) => { 
+          if(res['_body']=='ERROR'){
+            this.createAlert();
+          }else{
+            this.navCtrl.push(HomePage);
+            window.localStorage.setItem('notas', res['_body']);
+          };
+        }, () => { 
           this.createAlert();
-          this.buttonDisabled = false;
-        }else{
-          this.navCtrl.push(HomePage);
-          window.localStorage.setItem('notas', res['_body']);
-        };
-      }, () => { 
-        this.createAlert();
-      }); 
+        }); 
+    }catch(err){
+      console.log(err);
+    }
   }
 
 }
