@@ -4,7 +4,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
-import { HTTP } from '@ionic-native/http';
 
 import { MyApp } from './app.component';
 import { InputPage } from '../pages/input/input';
@@ -36,8 +35,7 @@ import { FrequenciaPage } from '../pages/frequencia/frequencia';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    HTTP
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
