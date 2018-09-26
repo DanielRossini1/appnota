@@ -29,4 +29,28 @@ page-input {
         border-bottom: 0 !important;
         box-shadow: none !important;
     }
+
+    .made-by{
+        position: fixed;
+        bottom: 2px;
+        width: 100%;
+
+        p{
+            text-align: center;
+            color: $azulclaro;
+            margin: 0;
+            font-size: 10px;
+
+        }
+    }
+}
+
+@media (max-height: 610px){
+    page-input{
+
+        .div-logo{
+            margin: 55px auto 35px;
+        
+        }
+    }
 }

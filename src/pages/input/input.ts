@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 import { Http } from '@angular/http';
 
 import { HomePage } from '../home/home';
@@ -18,13 +18,13 @@ import { HomePage } from '../home/home';
 })
 export class InputPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http, private alertCtrl: AlertController) {
-    console.log('Abriu o app');
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http, private alertCtrl: AlertController, public loadingCtrl: LoadingController) {
+
   }
 
   form = {}
-
-
+  
+  
   createAlert(){
     let alert = this.alertCtrl.create({
       title: 'Erro!',
@@ -34,13 +34,22 @@ export class InputPage {
     alert.present();
   }
   
+  
   tratarForm(){
+    let loading = this.loadingCtrl.create({
+      spinner: 'bubbles',
+      content: 'Carregando Dados...'
+    });
+    loading.present();
     this.http.post('https://apinota.herokuapp.com/api', { ra: this.form['ra'], senha: this.form['senha']} )
       .subscribe((res) => { 
         if(res['_body']=='ERROR'){
           this.createAlert();
+          loading.dismiss();
         }else{  
+          loading.dismiss();
           this.navCtrl.push(HomePage);
+          window.localStorage.setItem('notas',res['_body']);
         };
       }); 
     }    
